@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anoigmata.gr | Κλειδαράς Αθήνα 24/7 | Προμηθέως 70</title>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    
+    <meta name="description" content="Κλειδαράς Αθήνα 24/7. Άμεση ανταπόκριση σε 15' στην οδό Προμηθέως 70, Πατήσια. Ανοίγματα θυρών, αυτοκινήτων και αλλαγή κλειδαριών χωρίς ζημιά.">
+    <meta name="keywords" content="κλειδαρας αθηνα, κλειδαρας πατησια, ανοιγμα πορτας, κλειδαρας 24 ωρες, προμηθεως 70">
+    <link rel="canonical" href="https://anoigmata.gr">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Anoigmata.gr",
+      "image": "img/service1.webp",
+      "url": "https://anoigmata.gr",
+      "telephone": "+306932543349",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Προμηθέως 70",
+        "addressLocality": "Αθήνα",
+        "postalCode": "11254",
+        "addressCountry": "GR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.01123,
+        "longitude": 23.72951
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #ffffff;
+            color: #010410;
+            overflow-x: hidden;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* --- THE MARQUEE CODE THAT WORKS --- */
+        .marquee {
+            position: relative;
+            width: 100vw;
+            max-width: 100%;
+            height: 100px;
+            overflow-x: hidden;
+            background: #0052ff;
+            display: flex;
+            align-items: center;
+        }
+
+        .track {
+            position: absolute;
+            white-space: nowrap;
+            will-change: transform;
+            animation: marquee 32s linear infinite;
+        }
+
+        .content {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* --- HERO & GENERAL --- */
+        .hero-title {
+            font-size: clamp(3.2rem, 11vw, 7.5rem);
+            line-height: 1.1; 
+            letter-spacing: -0.04em;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(1, 4, 16, 0.75), rgba(1, 4, 16, 0.9)), 
+                              url('img/service1.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .hero-bg { background-attachment: scroll !important; } 
+            .hero-title { line-height: 1.0; margin-bottom: 1.5rem; }
+            section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+            .service-card { height: 320px; padding: 25px; }
+        }
+
+        nav { transition: all 0.3s ease; }
+        nav.scrolled {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* --- SERVICES --- */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 40px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            background: #000;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .service-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.5;
+            transition: all 0.8s ease;
+        }
+
+        .service-card:hover { border-color: #0052ff; transform: translateY(-10px) scale(1.02); }
+        .service-card:hover img { transform: scale(1.1); opacity: 0.35; }
+        .service-card h3 { position: relative; z-index: 10; color: white; font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+        .service-card p { position: relative; z-index: 10; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 500; }
+
+        /* --- BRANDS --- */
+        .brands-grid img {
+            height: 35px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.4;
+            transition: 0.3s;
+            object-fit: contain;
+        }
+        .brands-grid img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+
+        /* --- FAQ --- */
+        .faq-item { border-bottom: 1px solid #f1f5f9; }
+        .faq-button { width: 100%; padding: 24px 0; text-align: left; display: flex; justify-content: space-between; align-items: center; font-weight: 800; transition: color 0.3s; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.4s ease-out; color: #64748b; }
+        .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 24px; }
+        .faq-item.active i { transform: rotate(180deg); color: #0052ff; }
+
+        .mobile-action-bar { display: none; }
+        @media (max-width: 768px) {
+            .mobile-action-bar {
+                display: flex;
+                position: fixed;
+                bottom: 20px; left: 20px; right: 20px;
+                background: rgba(1, 4, 16, 0.95);
+                backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 24px;
+                padding: 10px 12px;
+                z-index: 200;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .pulse-call { background: #0052ff; animation: subtle-pulse 2s infinite; }
+        @keyframes subtle-pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0.6); } 70% { box-shadow: 0 0 0 15px rgba(0, 82, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0); } }
+        .btn-haptic:active { transform: scale(0.95); }
+        .star-icon { fill: #facc15; color: #facc15; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-slate-100 py-4 px-8 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/">
+                <img src="img/logo.png" alt="Anoigmata.gr Logo" class="h-10 md:h-14 w-auto object-contain">
+            </a>
+            <a href="tel:6932543349" class="bg-blue-600 text-white px-6 py-2.5 md:px-8 md:py-3 rounded-2xl font-bold text-sm shadow-xl shadow-blue-500/20 btn-haptic">6932543349</a>
+        </div>
+    </nav>
+
+    <section class="hero-bg pt-40 pb-20 px-8 md:px-12 flex items-center min-h-[80vh] text-white relative">
+        <div class="max-w-7xl mx-auto w-full relative z-10">
+            <div data-aos="fade-right" class="inline-flex items-center gap-2 bg-blue-600/30 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 border border-blue-500/50">
+                <i data-lucide="shield-check" class="w-4 h-4 text-blue-400"></i> Πιστοποιημένοι Κλειθροποιοί
+            </div>
+            
+            <h1 data-aos="fade-up" class="hero-title mb-8 leading-tight">
+                ΜΕΙΝΑΤΕ ΕΞΩ; <br>
+                <span class="text-blue-500 italic">ΚΛΕΙΔΑΡΑΣ 24/7</span>
+            </h1>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-7">
+                    <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-300 font-medium mb-10 max-w-2xl leading-relaxed">
+                        Άμεση ανταπόκριση σε 15' στην οδό Προμηθέως 70, Πατήσια. Εξειδικευμένοι τεχνικοί για ανοίγματα θυρών & αυτοκινήτων χωρίς καμία φθορά.
+                    </p>
+                    <a href="tel:6932543349" class="inline-flex bg-white text-slate-950 px-12 py-6 rounded-3xl font-black text-2xl gap-5 hover:bg-blue-600 hover:text-white transition shadow-2xl btn-haptic">
+                        <i data-lucide="phone-outgoing" class="w-8 h-8 text-blue-600"></i>
+                        ΚΑΛΕΣΤΕ ΤΩΡΑ
+                    </a>
+                </div>
+
+                <div data-aos="fade-left" data-aos-delay="600" class="lg:col-span-5 bg-white/5 p-8 rounded-[40px] border border-white/10 backdrop-blur-md hidden lg:block">
+                    <div class="flex gap-1 mb-6 text-yellow-400"><i data-lucide="star" class="fill-current w-5 h-5"></i><i data-lucide="star" class="fill-current w-5 h-5"></i><i data-lucide="star" class="fill-current w-5 h-5"></i><i data-lucide="star" class="fill-current w-5 h-5"></i><i data-lucide="star" class="fill-current w-5 h-5"></i></div>
+                    <p class="text-slate-200 italic text-lg mb-6 leading-relaxed">"Ήρθαν σε 10 λεπτά και άνοιξαν την πόρτα χωρίς καμία ζημιά. Επαγγελματίες!"</p>
+                    <div class="text-[11px] font-black uppercase tracking-widest text-blue-500">— Νίκος Π., Αθήνα</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee">
+        <div class="track">
+            <div class="content">
+                 • ΑΝΟΙΓΜΑΤΑ ΘΥΡΩΝ • ΑΛΛΑΓΗ ΚΛΕΙΔΑΡΙΩΝ • 24/7 SUPPORT • 15' ΑΠΟΚΡΙΣΗ • ΠΙΣΤΟΠΟΙΗΜΕΝΟΙ ΤΕΧΝΙΚΟΙ • ΑΝΟΙΓΜΑΤΑ ΘΥΡΩΝ • ΑΛΛΑΓΗ ΚΛΕΙΔΑΡΙΩΝ • 24/7 SUPPORT • 15' ΑΠΟΚΡΙΣΗ • ΠΙΣΤΟΠΟΙΗΜΕΝΟΙ ΤΕΧΝΙΚΟΙ • ΑΝΟΙΓΜΑΤΑ ΘΥΡΩΝ • ΑΛΛΑΓΗ ΚΛΕΙΔΑΡΙΩΝ • 24/7 SUPPORT • 15' ΑΠΟΚΡΙΣΗ • ΠΙΣΤΟΠΟΙΗΜΕΝΟΙ ΤΕΧΝΙΚΟΙ
+            </div>
+        </div>
+    </div>
+
+    <section class="py-24 px-8 md:px-12 bg-slate-50">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-black mb-16 uppercase italic tracking-tighter">ΓΙΑΤΙ ΝΑ ΕΠΙΛΕΞΕΤΕ <span class="text-blue-600">ΕΜΑΣ</span></h2>
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div data-aos="fade-up">
+                    <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6"><i data-lucide="clock-3" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-extrabold mb-4 uppercase">15' Χρόνος Άφιξης</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">Κινητά συνεργεία σε όλη την Αθήνα για την ταχύτερη δυνατή εξυπηρέτηση.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6"><i data-lucide="shield-check" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-extrabold mb-4 uppercase">Εγγύηση Εργασίας</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">100% ασφάλεια στο άνοιγμα και πιστοποιημένα υλικά κορυφαίας ποιότητας.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6"><i data-lucide="award" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-extrabold mb-4 uppercase">Πιστοποιημένοι Τεχνικοί</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">Τεχνικοί με νόμιμη άδεια από την ΕΛ.ΑΣ. για τη δική σας σιγουριά.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-y border-slate-100 text-center">
+        <div class="max-w-7xl mx-auto px-8">
+            <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-slate-400 mb-12">Απο ηγετες προμηθευτες</h3>
+            <div class="brands-grid grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-10 items-center justify-items-center">
+                <img src="img/abus.png" alt="Abus"> <img src="img/cisa.png" alt="Cisa"> <img src="img/dierre.png" alt="Dierre">
+                <img src="img/iseo.png" alt="Iseo"> <img src="img/keso.png" alt="Keso"> <img src="img/mottura.png" alt="Mottura">
+                <img src="img/multlock.png" alt="Multlock"> <img src="img/silca.png" alt="Silca"> <img src="img/yale.png" alt="Yale">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-8 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 mb-10 text-center md:text-left uppercase">Οι Υπηρεσίες μας</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" class="service-card group"><img src="img/service1.webp" alt="Ανοιγμα Πορτας"><h3>Ανοίγματα <br>Θυρών</h3><p>Άνοιγμα θωρακισμένων θυρών και οχημάτων χωρίς καμία απολύτως ζημιά.</p></div>
+                <div data-aos="fade-up" data-aos-delay="100" class="service-card group"><img src="img/service2.webp" alt="Αλλαγη Κλειδαριας"><h3>Αλλαγή <br>Κλειδαριών</h3><p>Αντικατάσταση και αναβάθμιση κλειδαριών με συστήματα Anti-drill & Anti-snap.</p></div>
+                <div data-aos="fade-up" data-aos-delay="200" class="service-card group"><img src="img/service3.jpg" alt="Μηχανισμοι Ασφαλειας"><h3>Μηχανισμοί <br>Ασφαλείας</h3><p>Τοποθέτηση σουστών επαναφοράς και συστημάτων ελεγχόμενης πρόσβασης.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-8 md:px-12 bg-slate-50">
+        <div class="max-w-3xl mx-auto text-center md:text-left">
+            <h2 class="text-4xl font-black mb-10 uppercase italic tracking-tighter">Συχνές <span class="text-blue-600">Ερωτήσεις</span></h2>
+            <div class="space-y-4">
+                <div class="faq-item"><button class="faq-button btn-haptic">Πόσο γρήγορα έρχεστε; <i data-lucide="chevron-down" class="w-6 h-6"></i></button><div class="faq-answer"><p class="pb-8 text-sm md:text-base">Ο μέσος χρόνος απόκρισης στην Αθήνα είναι 15-20 λεπτά.</p></div></div>
+                <div class="faq-item"><button class="faq-button btn-haptic">Ανοίγετε πόρτες ασφαλείας χωρίς ζημιά; <i data-lucide="chevron-down" class="w-6 h-6"></i></button><div class="faq-answer"><p class="pb-8 text-sm md:text-base">Χρησιμοποιούμε εξειδικευμένα εργαλεία που δεν πληγώνουν την πόρτα ή την κλειδαριά σας.</p></div></div>
+                <div class="faq-item"><button class="faq-button btn-haptic">Ποιες περιοχές καλύπτετε; <i data-lucide="chevron-down" class="w-6 h-6"></i></button><div class="faq-answer"><p class="pb-8 text-sm md:text-base">Εξυπηρετούμε όλο το Λεκανοπέδιο Αττικής, 24 ώρες το 24ωρο.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-black mb-6 uppercase italic tracking-tighter">Η ΕΔΡΑ ΜΑΣ ΣΤΑ <span class="text-blue-600">ΠΑΤΗΣΙΑ</span></h2>
+                <p class="text-slate-600 text-lg mb-8 leading-relaxed">Βρισκόμαστε στην καρδιά της Αθήνας για να μπορούμε να εξυπηρετούμε κάθε γειτονιά σε λιγότερο από 20 λεπτά.</p>
+                <div class="space-y-4 font-bold text-slate-900">
+                    <div class="flex items-center gap-4"><i data-lucide="map-pin" class="text-blue-600"></i> Προμηθέως 70, Αθήνα 11254</div>
+                    <div class="flex items-center gap-4"><i data-lucide="clock" class="text-blue-600"></i> Ανοιχτά 24 Ώρες</div>
+                </div>
+            </div>
+            <div data-aos="zoom-in" class="rounded-[40px] overflow-hidden shadow-2xl h-[450px] border border-slate-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.76632491176!2d23.72732137637841!3d38.01123422736417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a364beae88ab%3A0x91a5657f9e8f9147!2zzqDPgc6_zrzOt864zq3Pic-CIDcwLCDOkc64zq7Ovc6xIDExMiA1NA!5e0!3m2!1sel!2sgr!4v1711234567890!5m2!1sel!2sgr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-8 md:px-12 bg-slate-950 text-white border-t border-white/5 text-center md:text-left">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <div class="inline-flex items-center gap-2 bg-blue-600/20 text-blue-400 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 border border-blue-900/50"><i data-lucide="award" class="w-4 h-4 text-blue-500"></i> Quality Assurance</div>
+                <h2 class="text-5xl font-extrabold uppercase mb-8 leading-[1.1] tracking-tighter text-white">Πιστοποιηση <br>Ελληνικης Αστυνομιας</h2>
+                <p class="text-slate-400 font-medium text-xl leading-relaxed max-w-xl mb-10">Η ANOIGMATA.GR λειτουργεί υπό την αυστηρή έγκριση της Ελληνικής Αστυνομίας. Η διασφάλιση ποιότητας είναι η απόλυτη εγγύηση για τον χώρο σας.</p>
+                <div class="text-[11px] font-black uppercase tracking-[0.4em] text-blue-500">Προμηθέως 70, Αθήνα</div>
+            </div>
+            <div data-aos="zoom-in" class="flex justify-center md:justify-end">
+                <img src="img/policelogo.png" alt="Police Logo" class="w-[320px] h-auto drop-shadow-[0_0_50px_rgba(0,82,255,0.3)]">
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 px-8 bg-black text-white text-center">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-2xl font-black mb-6 tracking-tighter uppercase italic">ANOIGMATA<span class="text-blue-600">.GR</span></div>
+            <p class="text-slate-500 text-[11px] font-bold uppercase tracking-[0.4em]">6932543349 | Προμηθέως 70, Αθήνα 11254</p>
+        </div>
+    </footer>
+
+    <div class="mobile-action-bar">
+        <div class="flex flex-col ml-3">
+            <span class="text-[9px] font-black uppercase tracking-widest text-blue-500">Emergency 24/7</span>
+            <span class="text-white font-bold text-sm tracking-tight">6932543349</span>
+        </div>
+        <a href="tel:6932543349" class="pulse-call text-white px-8 py-3 rounded-xl font-black text-sm btn-haptic flex items-center gap-2">
+            <i data-lucide="phone-call" class="w-4 h-4"></i> ΚΛΗΣΗ
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: true, easing: 'ease-out-expo' });
+        lucide.createIcons();
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Sticky Nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>

@@ -50,7 +50,7 @@
             scroll-behavior: smooth;
         }
 
-        /* --- THE MARQUEE CODE THAT WORKS --- */
+        /* --- THE MARQUEE CODE --- */
         .marquee {
             position: relative;
             width: 100vw;
@@ -61,14 +61,12 @@
             display: flex;
             align-items: center;
         }
-
         .track {
             position: absolute;
             white-space: nowrap;
             will-change: transform;
             animation: marquee 32s linear infinite;
         }
-
         .content {
             font-size: 32px;
             font-weight: 800;
@@ -76,7 +74,6 @@
             text-transform: uppercase;
             font-style: italic;
         }
-
         @keyframes marquee {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
@@ -90,7 +87,6 @@
             font-weight: 800;
             text-transform: uppercase;
         }
-
         .hero-bg {
             background-image: linear-gradient(rgba(1, 4, 16, 0.75), rgba(1, 4, 16, 0.9)), 
                               url('img/service1.webp');
@@ -128,7 +124,6 @@
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         .service-card img {
             position: absolute;
             inset: 0;
@@ -139,21 +134,13 @@
             opacity: 0.5;
             transition: all 0.8s ease;
         }
-
         .service-card:hover { border-color: #0052ff; transform: translateY(-10px) scale(1.02); }
         .service-card:hover img { transform: scale(1.1); opacity: 0.35; }
         .service-card h3 { position: relative; z-index: 10; color: white; font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
         .service-card p { position: relative; z-index: 10; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; font-weight: 500; }
 
         /* --- BRANDS --- */
-        .brands-grid img {
-            height: 35px;
-            width: auto;
-            filter: grayscale(100%);
-            opacity: 0.4;
-            transition: 0.3s;
-            object-fit: contain;
-        }
+        .brands-grid img { height: 35px; width: auto; filter: grayscale(100%); opacity: 0.4; transition: 0.3s; object-fit: contain; }
         .brands-grid img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
         /* --- FAQ --- */
@@ -163,7 +150,13 @@
         .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 24px; }
         .faq-item.active i { transform: rotate(180deg); color: #0052ff; }
 
-        .mobile-action-bar { display: none; }
+        /* --- MOBILE ACTION BAR (Hidden by Default) --- */
+        .mobile-action-bar { 
+            display: none; 
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
         @media (max-width: 768px) {
             .mobile-action-bar {
                 display: flex;
@@ -179,12 +172,16 @@
                 justify-content: space-between;
                 align-items: center;
             }
+            /* Show class triggered by JS */
+            .mobile-action-bar.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .pulse-call { background: #0052ff; animation: subtle-pulse 2s infinite; }
         @keyframes subtle-pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0.6); } 70% { box-shadow: 0 0 0 15px rgba(0, 82, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0); } }
         .btn-haptic:active { transform: scale(0.95); }
-        .star-icon { fill: #facc15; color: #facc15; }
     </style>
 </head>
 <body class="antialiased">
@@ -198,7 +195,7 @@
         </div>
     </nav>
 
-    <section class="hero-bg pt-40 pb-20 px-8 md:px-12 flex items-center min-h-[80vh] text-white relative">
+    <section id="hero" class="hero-bg pt-40 pb-20 px-8 md:px-12 flex items-center min-h-[80vh] text-white relative">
         <div class="max-w-7xl mx-auto w-full relative z-10">
             <div data-aos="fade-right" class="inline-flex items-center gap-2 bg-blue-600/30 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 border border-blue-500/50">
                 <i data-lucide="shield-check" class="w-4 h-4 text-blue-400"></i> Πιστοποιημένοι Κλειθροποιοί
@@ -330,7 +327,7 @@
         </div>
     </footer>
 
-    <div class="mobile-action-bar">
+    <div id="mobileAction" class="mobile-action-bar">
         <div class="flex flex-col ml-3">
             <span class="text-[9px] font-black uppercase tracking-widest text-blue-500">Emergency 24/7</span>
             <span class="text-white font-bold text-sm tracking-tight">6932543349</span>
@@ -355,11 +352,23 @@
             });
         });
 
-        // Sticky Nav
+        // Dynamic Scroll UI Logic
+        const nav = document.querySelector('nav');
+        const mobileAction = document.getElementById('mobileAction');
+        const heroSection = document.getElementById('hero');
+
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
+            // Navbar Effect
             if (window.scrollY > 50) nav.classList.add('scrolled');
             else nav.classList.remove('scrolled');
+
+            // Mobile Action Bar Logic: Show only after leaving Hero
+            const heroHeight = heroSection.offsetHeight;
+            if (window.scrollY > (heroHeight - 100)) {
+                mobileAction.classList.add('visible');
+            } else {
+                mobileAction.classList.remove('visible');
+            }
         });
     </script>
 </body>

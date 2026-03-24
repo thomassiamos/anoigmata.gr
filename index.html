@@ -89,16 +89,15 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            min-height: 100vh; /* Desktop Default */
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
         }
 
         @media (max-width: 768px) {
             .hero-bg { 
                 background-attachment: scroll !important; 
-                min-height: 100svh !important; /* Mobile Full Height */
+                min-height: 100svh !important; /* Forces hero to fit mobile screen exactly */
             } 
             .hero-title { line-height: 1.0; margin-bottom: 1.5rem; }
             section { padding-top: 3rem; padding-bottom: 3rem; }
@@ -235,7 +234,7 @@
         </div>
     </nav>
 
-    <section id="hero" class="hero-bg pt-20 px-8 md:px-12 text-white">
+    <section id="hero" class="hero-bg pt-28 pb-16 px-8 md:px-12 text-white relative">
         <div class="max-w-7xl mx-auto w-full relative z-10">
             <div data-aos="fade-right" class="inline-flex items-center gap-2 bg-blue-600/30 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 border border-blue-500/50">
                 <i data-lucide="shield-check" class="w-4 h-4 text-blue-400"></i> Πιστοποιημένοι Τεχνικοί
@@ -263,11 +262,6 @@
                     <div class="text-[11px] font-black uppercase tracking-widest text-blue-500">— Νίκος Π., Αθήνα</div>
                 </div>
             </div>
-        </div>
-
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 md:hidden animate-bounce">
-            <span class="text-[10px] font-black uppercase tracking-[0.2em]">Scroll</span>
-            <i data-lucide="chevron-down" class="w-6 h-6"></i>
         </div>
     </section>
 

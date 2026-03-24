@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Συστήματα Ασφαλείας & Κύλινδροι | Anoigmata.gr</title>
+    
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+        
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #ffffff;
+            color: #010410;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Container & Cards */
+        .product-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+            padding: 6rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        /* Mobile Fixes */
+        @media (max-width: 1024px) {
+            .product-card {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 4rem 1.5rem;
+                text-align: left;
+            }
+            .product-image { order: 1; display: flex; justify-content: center; }
+            .product-info { order: 2; padding: 0 10px; }
+            .hero-intro { text-align: left !important; padding: 0 1.5rem; }
+        }
+
+        nav { 
+            background: rgba(255, 255, 255, 0.98); 
+            border-bottom: 1px solid #f1f5f9;
+            position: fixed;
+            top: 0; width: 100%; z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .footer-custom { background: #000; color: #fff; padding: 4rem 2rem; text-align: center; }
+
+        .badge-solid {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #f1f5f9;
+            color: #0052ff;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            color: #334155;
+        }
+
+        .check-icon { color: #0052ff; margin-top: 4px; flex-shrink: 0; }
+
+        /* No Box Look */
+        .product-image img {
+            border: none !important;
+            box-shadow: none !important;
+            mix-blend-mode: multiply;
+        }
+
+        /* Back to Top */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0052ff;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,82,255,0.3);
+        }
+        #backToTop.show { opacity: 1; visibility: visible; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="py-4 px-8 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Anoigmata.gr Logo" class="h-10 md:h-12 w-auto">
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="hidden md:block text-xs font-black uppercase tracking-widest hover:text-blue-600 transition">Αρχική</a>
+                <a href="tel:6938934434" class="bg-blue-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm">6938934434</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-12 bg-white hero-intro">
+        <div class="max-w-4xl mx-auto md:text-center px-6">
+            <h1 class="text-4xl md:text-7xl font-black uppercase italic tracking-tighter mb-8 leading-none">
+                Κύλινδροι <span class="text-blue-600">Υψηλής Ασφαλείας</span>
+            </h1>
+            <p class="text-slate-500 text-lg md:text-xl leading-relaxed font-medium">
+                Η επιλογή του σωστού κυλίνδρου είναι η σημαντικότερη απόφαση για την ασφάλεια του χώρου σας. Στην <strong>Anoigmata.gr</strong> προσφέρουμε λύσεις που αντέχουν σε κάθε προσπάθεια παραβίασης.
+            </p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="product-card">
+            <div class="product-image">
+                <img src="cylinders/ST8.png" alt="TESA ST8" class="w-full max-w-md">
+            </div>
+            <div class="product-info">
+                <span class="badge-solid">Premium Selection</span>
+                <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase text-blue-600">TESA ST8</h2>
+                <ul class="check-list">
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Κλείδωμα 5 Στροφών:</strong> Για μέγιστη θωράκιση κλειδώματος.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Προστασία Anti-Drill & Anti-Bump:</strong> Υψηλή αντοχή σε τρύπημα και χτύπημα.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Πιστοποίηση:</strong> Εγγύηση ποιότητας από την TESA ASSA ABLOY.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Κάρτα Ιδιοκτησίας:</strong> Ελεγχόμενη αντιγραφή κλειδιών μόνο με την κάρτα.</span></li>
+                </ul>
+                <div class="mt-8">
+                    <a href="tel:6938934434" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm hover:bg-black transition">
+                        <i data-lucide="phone"></i> ΚΛΗΣΗ ΓΙΑ ΤΙΜΗ
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-info lg:order-1 order-2">
+                <span class="badge-solid">Swiss Precision</span>
+                <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase text-blue-600">KESO 8000Ω²</h2>
+                <ul class="check-list">
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Τεχνολογία Omega:</strong> Προστασία κατά της 3D αντιγραφής.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Σώμα από Ατσάλι:</strong> Εξαιρετική αντοχή σε σπάσιμο και εξόλκηση.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Modular Design:</strong> Προσαρμόζεται σε κάθε τύπο και διάσταση πόρτας.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Top Security:</strong> Ο πλέον αναγνωρισμένος κύλινδρος παγκοσμίως.</span></li>
+                </ul>
+                <div class="mt-8">
+                    <a href="tel:6938934434" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm hover:bg-black transition">
+                        <i data-lucide="phone"></i> ΚΛΗΣΗ ΓΙΑ ΤΙΜΗ
+                    </a>
+                </div>
+            </div>
+            <div class="product-image lg:order-2 order-1">
+                <img src="cylinders/KESO.png" alt="KESO 8000" class="w-full max-w-md">
+            </div>
+        </div>
+
+        <div class="product-card border-none">
+            <div class="product-image">
+                <img src="cylinders/mtl800.gif" alt="Multlock MTL800" class="w-full max-w-md">
+            </div>
+            <div class="product-info">
+                <span class="badge-solid">Ultimate Shield</span>
+                <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase text-blue-600">MTL800</h2>
+                <ul class="check-list">
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Alpha Spring:</strong> Πατενταρισμένο ελατήριο ασφαλείας στο άκρο του κλειδιού.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Τηλεσκοπικές Μπίλιες:</strong> Διπλό σύστημα κλειδώματος υψηλής ακριβείας.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Μαγνητική Κάρτα:</strong> Αυστηρά ελεγχόμενη κοπή κλειδιών μέσω κάρτας.</span></li>
+                    <li><i data-lucide="check-circle-2" class="check-icon w-5 h-5"></i> <span><strong>Heavy Duty:</strong> Κατασκευασμένο για μέγιστη αντοχή σε ακραίες συνθήκες.</span></li>
+                </ul>
+                <div class="mt-8">
+                    <a href="tel:6938934434" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm hover:bg-black transition">
+                        <i data-lucide="phone"></i> ΚΛΗΣΗ ΓΙΑ ΤΙΜΗ
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer-custom mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-2xl font-black mb-6 italic uppercase">ANOIGMATA<span class="text-blue-600">.GR</span></div>
+            <p class="text-[10px] text-slate-500 uppercase tracking-widest">© 2026 Anoigmata.gr. All Rights Reserved. | 6938934434</p>
+        </div>
+    </footer>
+
+    <div id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i data-lucide="chevron-up"></i>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const btt = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) btt.classList.add('show');
+            else btt.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
